@@ -40,6 +40,6 @@ Experiments
 - E2. Data pruning ratio vs. Training steps vs. Performance
 
 ## Roadmap
-- [] E1 on R1 and R2 for MNIST datasets
-- [] Train and Evaluate with Lightweight CNN
+- [ ] E1 on R1 and R2 for MNIST datasets
+- [ ] Train and Evaluate with Lightweight CNN
 
