@@ -37,10 +37,12 @@ def get_centroids(n_clusters, trainloader, device='', save=False, vis=False):
     
     if vis:
         print("Visualize the centroids...")
-        # randomly pick 3 centroids and visualize in subplot
-        fig, ax = plt.subplots(1, 3, figsize=(10, 10))
-        for i in range(3):
-            ex = centroids[np.random.randint(0, n_clusters)]
+        # pick 9 centroids and visualize in subplot
+        fig, ax = plt.subplots(3, 3, figsize=(10, 10))
+        ax = ax.flatten()
+        for i in range(9):
+            # ex = centroids[np.random.randint(0, n_clusters)]
+            ex = centroids[i]
             ax[i].imshow(ex.reshape(28, 28), cmap='gray')
         plt.show()
     
@@ -57,3 +59,13 @@ def get_centroids(n_clusters, trainloader, device='', save=False, vis=False):
         print(f"Centroids saved to {SAVENAME} (shape: {centroids.shape})")
     
     return kmeans, centroids
+
+# visualize histogram 
+import matplotlib.pyplot as plt
+
+def plot_histogram(assignments):
+    plt.hist(assignments, bins=10)
+    plt.xlabel("Cluster")
+    plt.ylabel("Number of images")
+    plt.title("Histogram of clusters")
+    plt.show()
