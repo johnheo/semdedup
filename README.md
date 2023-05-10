@@ -9,7 +9,7 @@ python main.py \
     --ratio 25 \            # % data to use
     --n_clusters 20 \       # number of clusters
     --rank_type random \    # random vs. cossim
-    --prune_type common \   # common vs. dierse
+    --prune_type common \   # common vs. diverse
     --dataset fmnist        # mnist or fmnist
 ```
 To generate a sweep over hyperparameters, simply edit the script `run.sh` and then launch 
