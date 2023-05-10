@@ -16,6 +16,9 @@ To generate a sweep over hyperparameters, simply edit the script `run.sh` and th
 ```sh
 sh run.sh
 ```
+You can also interactively play around with our code through the two notebooks:
+- `dedeup.ipynb` deduplicate with fast kmeans (w/ support on MPS backend)
+- `train.ipynb` train with deduplicated dataset
 
 ## Introduction
 - With the advent of big data, machine learning models are being trained on massive datasets but at diminishing returns. 
