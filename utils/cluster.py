@@ -23,7 +23,7 @@ def extract_features(trainloader):
     all_features = np.array(all_features)
     return all_features
 
-def get_centroids(n_clusters, trainloader, device='', save=False, vis=False):
+def get_centroids(n_clusters, trainloader, device='', save=False, vis=False, dataset='mnist'):
     all_features = extract_features(trainloader)
     
     if device=='cpu':
@@ -54,7 +54,7 @@ def get_centroids(n_clusters, trainloader, device='', save=False, vis=False):
         MODE = 'torch' if _USE_MPS else 'sklearn'
         if not os.path.exists(DIR):
             os.makedirs(DIR)
-        SAVENAME = f'{DIR}/{MODE}-k={n_clusters}.pt'
+        SAVENAME = f'{DIR}/{dataset}/{MODE}-k={n_clusters}.pt'
         torch.save(centroids, SAVENAME)
         print(f"Centroids saved to {SAVENAME} (shape: {centroids.shape})")
     
