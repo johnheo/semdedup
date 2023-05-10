@@ -2,6 +2,20 @@
 
 > Extension to [SemDeDup: Data-efficient learning at web-scale through semantic deduplication](https://arxiv.org/abs/2303.09540)
 
+## Getting Started
+To get the deduplicated dataloader and train a model, use the following command:
+```py
+python main.py \
+    --ratio 25 \            # % data to use
+    --n_clusters 20 \       # number of clusters
+    --rank_type random \    # random vs. cossim
+    --prune_type common \   # common vs. dierse
+    --dataset fmnist        # mnist or fmnist
+```
+To generate a sweep over hyperparameters, simply edit the script `run.sh` and then launch 
+```sh
+sh run.sh
+```
 
 ## Introduction
 - With the advent of big data, machine learning models are being trained on massive datasets but at diminishing returns. 
@@ -16,30 +30,24 @@
 ## Methods
 Clustering techniques to be used
 - [Fast K-means clustering](https://github.com/DeMoriarty/fast_pytorch_kmeans)
-- [Gaussian Mixture Models](https://github.com/ldeecke/gmm-torch)
+- [~~Gaussian Mixture Models~~](https://github.com/ldeecke/gmm-torch)
+
+Models to be used for feature extraction
+- VGG16
+- ~~ResNet~~
+
+Datasets used
+- MNIST
+- Fashion-MNIST
+- CIFAR-10
+- ~~Stanford Cars~~
+- ~~Caltech101~~
 
 Representation spaces to be used
 - R1. Pixel space
 - R2. Embedding space
 
-Models to be used for feature extraction
-- ResNet
-- VGG
-- ViT
-- CLIP 
-
-Datasets to be used
-- MNIST
-- Fashion MNIST
-- CIFAR-10,100
-- Stanford Cars
-- Caltech101
-
 Experiments
 - E1. Pairwise Cosine similarity per clusters 
 - E2. Data pruning ratio vs. Training steps vs. Performance
-
-## Roadmap
-- [ ] E1 on R1 and R2 for MNIST datasets
-- [ ] Train and Evaluate with Lightweight CNN
 
