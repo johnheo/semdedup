@@ -1,4 +1,6 @@
-# Semantic Deduplication for Data Efficient Learning
+# Semantic Deduplication for Data Efficient Learning [[technical report]](https://drive.google.com/file/d/1z_ORLx81rJA8pgH5g4KucL5GJqVn3YNb/view?usp=sharing)
+### 
+> Jung Hwan Heo & Paul Chen
 
 > Extension to [SemDeDup: Data-efficient learning at web-scale through semantic deduplication](https://arxiv.org/abs/2303.09540)
 
